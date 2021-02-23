@@ -1,6 +1,6 @@
 # SPA-Simple Page Application
 
-# ![img](https://github.com/queopsvitoria/spaAngularFrota/blob/main/src/assets/images/aleatoria/spa.png?raw=true)
+# ![img](https://github.com/queopsvitoria/spaAngularFrota/blob/main/src/assets/images/aleatoria/sistema.png?raw=true)
 
 
 
