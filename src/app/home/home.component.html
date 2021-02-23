@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SPA com Angular</title>
+</head>
+
+<body>
+
+  <mat-toolbar color="primary">
+    <button mat-icon-button [matMenuTriggerFor]="menu">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item>Carro</button>
+      <button mat-menu-item>Motorista</button>
+      <button mat-menu-item>Disponibilidade</button>
+
+    </mat-menu>
+
+    <span> Queops Simple Page Application</span>
+    <span class="example-spacer"></span>
+    <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+      <mat-icon>favorite</mat-icon>
+    </button>
+    <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+      <mat-icon>share</mat-icon>
+    </button>
+  </mat-toolbar>
+ 
+  <!-- <div> 
+    <header> 
+      <tr>                
+          <td><img class="photo" src="/assets/images/angular.png" width="50" height="55" alt = "ilustração do meu rosto"></td>
+          <td><h4 id="title"> Queops vitoria</h4></td>
+      </tr>      
+     </header>
+  </div> -->
+
+  <div>
+    <spa-carro [carrosInicial]="valor"></spa-carro>
+    <button (click)="mudarValor()">Mudar Valor</button>
+  </div>
+
+  <div>
+    <spa-motorista></spa-motorista>
+  </div>
+
+  <div>
+    <spa-locados></spa-locados>
+  </div>
+
+</body>
+
+</html>

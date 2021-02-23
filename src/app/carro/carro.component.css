@@ -1,0 +1,33 @@
+body {
+    background : rgb(212, 197, 197);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    /* max-width: 900px; */
+    margin: auto;
+  
+  }
+  
+  .example-spacer {
+    flex: 1 1 auto;
+  }
+  
+  table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 1px;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #dddddd;
+  }
+  
+  .photo {
+    border-radius: 50%;
+    border: 1px solid #505050;
+    text-align: right;
+  }

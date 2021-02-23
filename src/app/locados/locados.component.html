@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Locados</title>
+</head>
+<body>
+    <h1 class="hteste">Locados</h1>
+
+    <div> 
+        <button mat-raised-button (click)="isLinear = !isLinear" id="toggle-linear">
+            {{!isLinear ? 'Ativar modo Linear' : 'Desabilitar modulo Linear'}}
+        </button>
+
+          <mat-horizontal-stepper [linear]="isLinear" #stepper>
+            <mat-step [stepControl]="firstFormGroup">
+              <form [formGroup]="firstFormGroup">
+                <ng-template matStepLabel>Preencha com o Motrista</ng-template>
+                <mat-form-field>
+                  <mat-label>Motorista</mat-label>
+                  <input matInput placeholder="Last name, First name" formControlName="firstCtrl" required>
+                </mat-form-field>
+                <div>
+                  <button mat-button matStepperNext>Proximo</button>
+                </div>
+              </form>
+            </mat-step>
+            <!-- #docregion label -->
+            <mat-step [stepControl]="secondFormGroup" label="Preencha com a Placa do Carro">
+            <!-- #enddocregion label -->
+              <form [formGroup]="secondFormGroup">
+                <mat-form-field>
+                  <mat-label>Placa</mat-label>
+                  <input matInput formControlName="secondCtrl" placeholder=" "
+                         required>
+                </mat-form-field>
+                <div>
+                  <button mat-button matStepperPrevious>Back</button>
+                  <button mat-button matStepperNext>Next</button>
+                </div>
+              </form>
+            </mat-step>
+            <mat-step>
+              <ng-template matStepLabel>Done</ng-template>
+              <p>Tudo Pronto</p>
+              <div>
+                <button mat-button matStepperPrevious>Volta</button>
+                <button mat-button (click)="stepper.reset()">Resetar</button>
+              </div>
+            </mat-step>
+          </mat-horizontal-stepper>
+
+    </div>
+
+
+    <div> 
+        <table *ngIf="exibeTabela">
+          <tr>
+            <th>Placa</th>
+            <th>Modelo</th>
+            <th>Motorista</th>
+            <th>Data Locação</th>
+            <th>Data Devolução</th>
+
+          </tr>
+          <tr *ngFor="let locados of listaLocados">
+            <td>{{locados.placa}}</td>
+            <td>{{locados.modelo}}</td>
+            <td>{{locados.motorista}}</td>
+            <td>{{locados.dtlocacao}}</td>
+            <td>{{locados.dtdevolucao}}</td>
+          </tr>
+        </table>
+      </div> 
+    
+</body>
+</html>
+
+
